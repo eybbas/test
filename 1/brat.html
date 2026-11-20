@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brat</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .con {
+            width: 100vw;
+            height: 100dvh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        .show {
+            height: 80%;
+            width: 60%;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+        .output {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            word-break: break-word;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: justify;
+            text-align-last: justify;
+            filter: blur(3px);
+        }
+        .input {
+            width: 80%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="show">
+            <p class="output" id="output"></p>
+        </div>
+        <div class="form">
+            <input class="input" type="text" id="myInput" oninput="update()" />
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.show');
+        const containerHeight = container.clientHeight; // запоминаем сразу
+        
+        function update() {
+            const p = document.getElementById('output');
+        
+            p.textContent = document.getElementById('myInput').value;
+        
+            let size = 200;
+            p.style.fontSize = size + 'px';
+        
+            while (p.scrollHeight > containerHeight && size > 12) {
+                size--;
+                p.style.fontSize = size + 'px';
+            }
+        }
+    </script>
+</body>
+</html>

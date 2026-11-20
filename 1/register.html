@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <form action="" class="register_form">
+        <div class="input_wrapper">
+            <label class="input_label" for="name">Name</label>
+            <input id="name" name="name" type="text" class="input default" placeholder="Alex" required autofocus>
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="email">Email</label>
+            <input id="email" name="email" type="email" class="input default" autocomplete="email" placeholder="name@email.com" required>
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="tel">Phone Number</label>
+            <div class="input_tel">
+                <span class="country_code">+998</span>
+                <input id="tel" name="tel" type="tel" class="input tel" placeholder="123456789" required>
+            </div>
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="password">Create Password</label>
+            <input id="password" name="password" type="password" class="input default" required autocomplete="new-password" minlength="8" placeholder="Create password">
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="password_co">Confirm Password</label>
+            <input id="password_co" name="password_co" type="password" class="input default" required autocomplete="new-password" minlength="8" placeholder="Confirm password">
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="date">Birth date</label>
+            <input id="date" name="date" type="date" class="input date" required>
+        </div>
+        <div class="select_wrapper">
+            <label class="input_label" for="sex">Sex</label>
+            <select class="select" name="sex" id="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="city">City</label>
+            <input list="cities" id="city" name="city" type="text" class="input city" placeholder="City" required>
+            <datalist id="cities">
+                <option value="Ashgabat"></option>
+                <option value="Almaty"></option>
+                <option value="Bishkek"></option>
+                <option value="Dushanbe"></option>
+                <option value="Tashkent"></option>
+            </datalist>
+        </div>
+        <fieldset class="fieldset">
+            <legend class="legend">Hobbies</legend>
+            <div class="checkbox_item">
+                <input type="checkbox" id="hobbies_1" value="chess" name="hobbies">
+                <label class="checkbox_label" for="hobbies_1">Chess</label>
+            </div>
+            <div class="checkbox_item">
+                <input type="checkbox" id="hobbies_2" value="football" name="hobbies">
+                <label class="checkbox_label" for="hobbies_2">Football</label>
+            </div>
+            <div class="checkbox_item">
+                <input type="checkbox" id="hobbies_3" value="swimming" name="hobbies">
+                <label class="checkbox_label" for="hobbies_3">Swimming</label>
+            </div>
+        </fieldset>
+        <div class="privacy_policy">
+            <input type="checkbox" value="true" name="privacyPolicy" id="privacyPolicy" required>
+            <label class="checkbox_label" for="privacyPolicy">I agree to the processing of data</label>
+        </div>
+        <div class="input_wrapper">
+            <label class="input_label" for="promocode">Promocode (Optional)</label>
+            <input id="promocode" name="promocode" type="text" class="input default" placeholder="Promocode">
+        </div>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+</body>
+</html>
